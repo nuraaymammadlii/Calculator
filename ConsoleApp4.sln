@@ -1,25 +1,48 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33110.190
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp4", "ConsoleApp4\ConsoleApp4.csproj", "{DDE2478A-8212-4344-A04A-05AB990F4FAB}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DDE2478A-8212-4344-A04A-05AB990F4FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDE2478A-8212-4344-A04A-05AB990F4FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDE2478A-8212-4344-A04A-05AB990F4FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDE2478A-8212-4344-A04A-05AB990F4FAB}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7F358988-28B4-41D5-9E9B-806F647C13C0}
-	EndGlobalSection
-EndGlobal
+using System.ComponentModel;
+/*
+Calculator
+Plus
+        Mult
+        Div
+        Subt
+        funksiyalari olsun
+        ve switch istifade ederek
+        kalkulyator yazmaq lazimdir.
+*/
+namespace Homework
+{
+    internal class Calculator
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                double number1 = Convert.ToDouble(Console.ReadLine());
+                ConsoleKeyInfo key = Console.ReadKey();
+                Console.WriteLine();
+                double number2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("--");
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.OemPlus:
+                        Console.WriteLine(number1 + number2);
+                        break;
+                    case ConsoleKey.OemMinus:
+                        Console.WriteLine(number1 - number2);
+                        break;
+                    case ConsoleKey.D8:
+                        Console.WriteLine(number1 * number2);
+                        break;
+                    case ConsoleKey.Oem2:
+                        Console.WriteLine(number1 / number2);
+                        break;
+                    default:
+                        Console.WriteLine("Try again.");
+                        break;
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
